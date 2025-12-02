@@ -1,0 +1,16 @@
+# O que é java script?
+JavaScript é uma linguagem de programação leve, interpretada e orientada a objetos, amplamente utilizada para criar páginas web dinâmicas e interativas. Ela é executada no lado do cliente (navegador) e permite manipular elementos HTML, responder a eventos do usuário, validar formulários, criar animações, entre outras funcionalidades.
+
+
+Ele na maior parte do tempo e um codigo usado juntamente com o html
+E temos duas formas de usar ele a primeira e ele dentro do arquivo com a tag <script> e a segunda e criando um arquivo .js e linkando ele no html
+
+
+### Comandos
+Para arquivos em html
+usamos a tag <script> para inserir o codigo javascript
+<script>
+  // Seu código JavaScript aqui
+</script>
+ou
+<script src="caminho/para/seu/arquivo.js"></script> 
