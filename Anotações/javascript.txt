@@ -14,3 +14,135 @@ usamos a tag <script> para inserir o codigo javascript
 </script>
 ou
 <script src="caminho/para/seu/arquivo.js"></script> 
+
+por ser mais pesado referencie o js no final do body 
+
+# tipos de saida 
+primeira forma e o innerHTML(forma mais usada)
+document.getElementById("id_do_elemento").innerHTML = "Texto a ser exibido";
+o segundo e o document.write(com proposito de testes)
+document.write("Texto a ser exibido");
+a terceira forma e o alert(mostra uma caixa de dialogo)
+alert("Texto a ser exibido");/
+e o ultimo e o console.log(para testes no console do navegador)
+console.log("Texto a ser exibido");
+
+# declaração de variaveis
+usamos var, let e const
+var e usado para declarar variaveis com escopo global ou de função
+var nomeDaVariavel = valor; // escopo global ou de função 
+let e usado para declarar variaveis com escopo de bloco
+let nomeDaVariavel = valor; // escopo de bloco
+const e usado para declarar constantes com escopo de bloco
+const nomeDaVariavel = valor; // escopo de bloco, valor constante
+
+obs: posso colocar tudo na msm linha separado por  ponto e virgula  
+let a = 10; let b = 20; const c = 30;
+
+obs: ele ignora espaços em branco e quebras de linha
+let x = 10;
+let x=20;
+
+obs: ele aceita quebra de linha em expressões
+let soma = 10 +
+            20 +
+            30;
+
+pode ser feita em bloco de codigo tbm 
+funtion minhaFuncao() {
+    let x = 10;
+    let y = 20;
+    return x + y;
+}
+
+# tipos de dados
+JavaScript possui vários tipos de dados, incluindo:
+Números: Representam valores numéricos, tanto inteiros quanto de ponto flutuante.
+Strings: Sequências de caracteres, usadas para representar texto.     
+diferenciação entre strings e números
+console.log("10" + 5); // Resultado: "105" (concatenação de string)
+console.log(10 + 5);   // Resultado: 15 (soma numérica)
+Booleanos: Representam valores verdadeiros (true) ou falsos (false).
+
+# operadores aritimeticos
+JavaScript suporta os seguintes operadores aritméticos:
+Adição (+): Soma dois valores.  
+Subtração (-): Subtrai um valor de outro.
+Multiplicação (*): Multiplica dois valores.
+Divisão (/): Divide um valor por outro.
+Módulo (%): Retorna o resto da divisão entre dois valores.
+Exemplo: 
+let a = 10;
+let b = 3;
+console.log(a + b); // Resultado: 13
+console.log(a - b); // Resultado: 7
+console.log(a * b); // Resultado: 30
+console.log(a / b); // Resultado: 3.3333...
+console.log(a % b); // Resultado: 1
+Operadores de atribuição
+JavaScript suporta os seguintes operadores de atribuição:
+Atribuição simples (=): Atribui um valor a uma variável.
+Atribuição composta (+=, -=, *=, /=, %=): Combina uma operação
+com a atribuição.
+Exemplo:
+let x = 10; // Atribuição simples
+x += 5;     // Equivalente a x = x + 5
+console.log(x); // Resultado: 15
+x -= 3;     // Equivalente a x = x - 3
+console.log(x); // Resultado: 12
+x *= 2;     // Equivalente a x = x * 2
+console.log(x); // Resultado: 24
+x /= 4;     // Equivalente a x = x / 4
+console.log(x); // Resultado: 6
+x %= 4;     // Equivalente a x = x % 4
+console.log(x); // Resultado: 2
+Operadores de comparação
+JavaScript suporta os seguintes operadores de comparação:
+Igualdade (==): Verifica se dois valores são iguais (com conversão de tipo).
+Estritamente igual (===): Verifica se dois valores são iguais (sem conversão de tipo
+).Diferença (!=): Verifica se dois valores são diferentes (com conversão de tipo).
+Estritamente diferente (!==): Verifica se dois valores são diferentes (sem conversão de tipo).
+Maior que (>): Verifica se um valor é maior que outro.
+Menor que (<): Verifica se um valor é menor que outro.
+Maior ou igual (>=): Verifica se um valor é maior ou igual a outro.
+Menor ou igual (<=): Verifica se um valor é menor ou igual a outro.
+Exemplo:
+let a = 10;
+let b = "10";
+console.log(a == b);  // Resultado: true (igualdade com conversão de tipo
+console.log(a === b); // Resultado: false (estritamente igual sem conversão de tipo)
+console.log(a != b);  // Resultado: false (diferença com conversão de tipo)
+console.log(a !== b); // Resultado: true (estritamente diferente sem conversão de tipo)
+console.log(a > 5);   // Resultado: true (maior que)
+console.log(a < 15);  // Resultado: true (menor que)
+console.log(a >= 10); // Resultado: true (maior ou igual)
+console.log(a <= 5);  // Resultado: false (menor ou igual)
+Operadores lógicos
+JavaScript suporta os seguintes operadores lógicos:
+E lógico (&&): Retorna true se ambos os operandos forem true.
+Ou lógico (||): Retorna true se pelo menos um dos operandos for true.
+Negação lógica (!): Inverte o valor lógico de um operando.
+Exemplo:
+let x = 10;
+let y = 5;
+console.log(x > 5 && y < 10); // Resultado: true (E lógico)
+console.log(x > 15 || y < 10); // Resultado: true (Ou lógico)
+console.log(!(x > 5)); // Resultado: false (Negação lógica)
+
+
+obs: letras maisuculas e minusculas sao diferentes(isso se chama casesensitive)
+var nome = "João";
+var Nome = "Maria";
+console.log(nome); // Resultado: João
+console.log(Nome); // Resultado: Maria
+
+
+obs: n;ao usar ifen em nomes de variaveis
+var nome-completo = "João Silva"; // Inválido
+var nome_completo = "João Silva"; // Válido
+
+# comentarios
+// Comentário de uma linha
+/* Comentário
+de múltiplas linhas */
+
