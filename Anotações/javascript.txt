@@ -29,12 +29,38 @@ console.log("Texto a ser exibido");
 
 # declaração de variaveis
 usamos var, let e const
-var e usado para declarar variaveis com escopo global ou de função
+var e usado para declarar variaveis podendo variar dentro de um escopo global ou de função 
 var nomeDaVariavel = valor; // escopo global ou de função 
-let e usado para declarar variaveis com escopo de bloco
-let nomeDaVariavel = valor; // escopo de bloco
+{
+  var nomeDaVariavel = valor; // escopo de função // aqui se eu fosse chamar a variavel nomeDaVariavel fora do bloco ela iria aparecer o valor de dentro do escopo e não o valor geral que fica fora do bloco
+}
+// algo interesante e quando usamos let no msm exemplo onde por let ser um valor não variavel a variavel nomeDaVariavel iria pegar o valor de fora do bloco pois dentro dele o valor fica fixo dentro do bloco
+
+let e usado para declarar variaveis unicas onde não mudam o valor 
+let nomeDaVariavel = valor; // o valor aqui sempre vao ser fixo 
 const e usado para declarar constantes com escopo de bloco
+aqui e bem mais facil por ser uma constante o valor nunca muda então em um bloco de codigo ficaria assim
 const nomeDaVariavel = valor; // escopo de bloco, valor constante
+e esse valor nunca mudaria 
+
+ao declarar uma variavel nunca usar um nome chave da linguagem como o let o const ou o var
+o javascript ele é literal então quando declaramos uma variavel assim:
+var nome; sobrenome; nomeCompleto;
+//sendo 
+nome = "Richardt"
+sobrenome ="Justke"
+nomeCompleto = nome + sobrenome;//aqui ele vairetornar RichardtJustke
+para corrigir isso usamos o operador de concatenação (+) para adicionar um espaço entre as variaveis desse modo
+nomeCompleto = nome + " " + sobrenome; // Resultado: "Richardt Justke"
+
+
+no caso de uma variavel que não seja uma string as coisas já são mais complicadas 
+aqui no caso e recoemndado fazer uma variavel com o valor inicial
+var idade = 15; // Declaração e inicialização da variável idade
+mas a declaração dela 
+soma = idade + 5; // Isso funciona, mas não é recomendado me retornando 20
+aqui no caso no geral ficaria assim 
+pessoa = nome + " " + soma; // Resultado: "Richardt Justke 20"
 
 obs: posso colocar tudo na msm linha separado por  ponto e virgula  
 let a = 10; let b = 20; const c = 30;
