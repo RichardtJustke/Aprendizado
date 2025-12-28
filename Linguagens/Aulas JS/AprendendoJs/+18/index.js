@@ -10,3 +10,9 @@ function idadeMaiorQue18(idade){
 }
     
 idadeMaiorQue18(idade);
+/*
+👉 Nível: básico
+Função recebe a idade e deve retornar "Maior de idade" ou "Menor de idade".
+
+Objetivo: função + condicional.
+*/

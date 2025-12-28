@@ -11,3 +11,10 @@ function calcularDesconto(valorProduto, desconto){
 
 let resultado  = calcularDesconto(valorProduto, desconto);
 alert("O valor do desconto é: R$ " + resultado.toFixed(2));
+/*
+Escreva uma função calcularDesconto(valor, desconto) que retorna o valor final após aplicar o desconto.
+
+Exemplo: calcularDesconto(100, 10) → 90
+
+Objetivo: lógica simples + porcentagem.
+*/
