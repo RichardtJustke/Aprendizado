@@ -28,6 +28,17 @@ func main() {
 			NomeProd: "Asus RogStrix g16",
 			PrecProd: 29999.00,
 		},
+		Produto{
+			NomeProd: "Ideapad Slim 3",
+			PrecProd: 1599.00,
+		},
 	)
-	fmt.Println(prod)
+	for _, produto := range prod {
+		if produto.PrecProd > 2000 {
+			fmt.Println(produto.NomeProd, "é muito caro")
+		} else {
+			fmt.Println(produto.NomeProd, "é acessivel")
+		}
+	}
+	fmt.Println(prod[0])
 }
