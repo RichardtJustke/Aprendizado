@@ -1,30 +1,29 @@
 package controller
 
 import (
-	"myGoApi/model"
 	"myGoApi/usecase"
 	"net/http"
 
 	"github.com/gin-gonic/gin"
 )
-type productController struct{
+
+type productController struct {
 	productUseCase usecase.ProductUsecase
 }
 
-func NewProductController(usecase usecase.ProductUsecase) productController{
+func NewProductController(usecase usecase.ProductUsecase) productController {
 	return productController{
 		productUseCase: usecase,
 	}
 }
 
-func (p *productController) GetProducts(ctx *gin.Context){
+func (p *productController) GetProducts(ctx *gin.Context) {
 
-	products := []model.Product{
-		{
-			ID: 1,
-			NAME: "batata frita",
-			VALOR: 20,
-		},
+	products, err := p.productUseCase.GetProducts()
+	if err != nil {
+		ctx.JSON(http.StatusInternalServerError, err)
+		return
 	}
+
 	ctx.JSON(http.StatusOK, products)
 }
