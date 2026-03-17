@@ -2,7 +2,7 @@
 import gradient from "gradient-string"
 
 import { testepage1 } from "../commands/testepage1.js"
-
+import { testepage2 } from "../commands/testepage2.js"
 
 
 
@@ -38,7 +38,7 @@ switch (command) {
     testepage1()
     break
   case "testepage2":
-    console.log("Você entrou na página 2")
+    testepage2()
     break
   default:
     console.log("Comando não encontrado")
