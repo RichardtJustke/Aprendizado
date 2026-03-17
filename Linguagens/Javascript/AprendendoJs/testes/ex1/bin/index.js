@@ -12,7 +12,7 @@ console.log(gradient(['red', 'orange']).multiline(`
 `)
 )
 
-//npm install chalk figlet gradient-string
+//usar esse comando para iniciar o projeto("npm install link chalk figlet gradient-string")
 //https://www.npmjs.com/package/gradient-string(configurações do gradient-string)
 //baixar para deixar bonito ksksksks
 //ir no site ("https://patorjk.com/software/taag/")
@@ -30,4 +30,14 @@ Command:
 testepage1
 testepage2
 `)
+}
+switch (command) {
+  case "testepage1":
+    console.log("Você entrou na página 1")
+    break
+  case "testepage2":
+    console.log("Você entrou na página 2")
+    break
+  default:
+    console.log("Comando não encontrado")
 }
