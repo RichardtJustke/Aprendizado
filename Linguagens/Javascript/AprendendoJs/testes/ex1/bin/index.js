@@ -1,6 +1,9 @@
 #!/usr/bin/env node
 import gradient from "gradient-string"
 
+import { testepage1 } from "../commands/testepage1.js"
+
+
 console.log(gradient(['red', 'orange']).multiline(`
 
 ████████╗███████╗███████╗████████╗███████╗     ██████╗██╗     ██╗
@@ -33,7 +36,7 @@ testepage2
 }
 switch (command) {
   case "testepage1":
-    console.log("Você entrou na página 1")
+    testepage1()
     break
   case "testepage2":
     console.log("Você entrou na página 2")
