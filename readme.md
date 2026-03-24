@@ -50,7 +50,7 @@ Exercícios práticos desenvolvidos durante cursos, tutoriais e estudos independ
 | JavaScript | 🟢 Em progresso | Fundamentos e projetos web |
 | TypeScript | 🟡 Iniciando | Tipagem estática para JS |
 | Golang | 🟢 Em progresso | Backend e sistemas |
-| Rust | 🟢 Em progresso  | Performance e segurança |
+| Rust | 🟡 Planejado  | Performance e segurança |
 | C++ | 🟡 Planejado | Fundamentos de baixo nível |
 | React | 🟢 Em progresso | Frontend moderno |
 | Vue | 🟡 Planejado | Framework progressivo |
