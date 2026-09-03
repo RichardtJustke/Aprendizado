@@ -14,7 +14,6 @@ type User struct {
 
 func AdicionarContatos() {
 	var contato User
-	var contatos []User
 
 	fmt.Println("Digite o nome do contato:")
 	fmt.Print("->")
@@ -26,12 +25,25 @@ func AdicionarContatos() {
 	fmt.Print("->")
 	fmt.Scan(&contato.EmailContact)
 
+	dados, err := os.ReadFile("data/contacts.json")
+	if err != nil {
+		dados = []byte("[]")
+	}
+
+	var contatos []User
+
+	err = json.Unmarshal(dados, &contatos)
+	if err != nil {
+		panic(err)
+	}
+
 	contatos = append(contatos, contato)
 
 	dadosJSON, err := json.MarshalIndent(contatos, "", " ")
 	if err != nil {
 		panic(err)
 	}
+
 	err = os.WriteFile("data/contacts.json", dadosJSON, 0o644)
 	if err != nil {
 		panic(err)
