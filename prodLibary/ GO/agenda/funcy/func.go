@@ -51,6 +51,33 @@ func AdicionarContatos() {
 }
 
 func ListarContatos() {
+	dados, err := os.ReadFile("data/contacts.json")
+	if err != nil {
+		fmt.Println("Erro ao ler o arquivo ou nenhum contato cadastrado:", err)
+		return
+	}
+
+	var contatos []User
+
+	err = json.Unmarshal(dados, &contatos)
+	if err != nil {
+		fmt.Println("Erro ao decodificar o JSON:", err)
+		return
+	}
+
+	if len(contatos) == 0 {
+		fmt.Println("Nenhum contato encontrado.")
+		return
+	}
+
+	fmt.Println("\n=== LISTA DE CONTATOS ===")
+	for i, contato := range contatos {
+		fmt.Printf("Contato #%d\n", i+1)
+		fmt.Printf("  Nome: %s\n", contato.NomeContact)
+		fmt.Printf("  Telefone: %d\n", contato.TelefoneContact)
+		fmt.Printf("  Email: %s\n", contato.EmailContact)
+		fmt.Println("-----------------------")
+	}
 }
 
 func EditarContatos() {
