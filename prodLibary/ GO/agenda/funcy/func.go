@@ -139,6 +139,55 @@ func EditarContatos() {
 }
 
 func RemoverContatos() {
+	dados, err := os.ReadFile("data/contacts.json")
+	if err != nil {
+		fmt.Println("Erro ao ler o arquivo ou nenhum contato cadastrado:", err)
+		return
+	}
+
+	var contatos []User
+	err = json.Unmarshal(dados, &contatos)
+	if err != nil {
+		fmt.Println("Erro ao decodificar o JSON:", err)
+		return
+	}
+
+	if len(contatos) == 0 {
+		fmt.Println("Nenhum contato cadastrado para remover.")
+		return
+	}
+
+	var nomeBusca string
+	fmt.Print("Digite o nome do contato que deseja remover: ")
+	fmt.Scan(&nomeBusca)
+
+	indiceEncontrado := -1
+	for i, contato := range contatos {
+		// Correção: Usar NomeContact (igual à struct)
+		if contato.NomeContact == nomeBusca {
+			indiceEncontrado = i
+			break
+		}
+	}
+
+	if indiceEncontrado == -1 {
+		fmt.Println("Contato não encontrado!")
+		return
+	}
+
+	contatos = append(contatos[:indiceEncontrado], contatos[indiceEncontrado+1:]...)
+
+	novosDadosJSON, err := json.MarshalIndent(contatos, "", "  ")
+	if err != nil {
+		fmt.Println("Erro ao gerar JSON:", err)
+		return
+	}
+
+	err = os.WriteFile("data/contacts.json", novosDadosJSON, 0o644)
+	if err != nil {
+		fmt.Println("Erro ao salvar o arquivo:", err)
+		return
+	}
 }
 
 func Sair() {
