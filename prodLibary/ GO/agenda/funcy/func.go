@@ -81,10 +81,67 @@ func ListarContatos() {
 }
 
 func EditarContatos() {
+	dados, err := os.ReadFile("data/contacts.json")
+	if err != nil {
+		fmt.Println("Erro ao ler o arquivo:", err)
+		return
+	}
+	var contatos []User
+	err = json.Unmarshal(dados, &contatos)
+	if err != nil {
+		fmt.Println("Erro ao decodificar o JSON:", err)
+		return
+	}
+	if len(contatos) == 0 {
+		fmt.Println("Nenhum contato cadastrado para editar.")
+		return
+	}
+
+	var nomeBusca string
+	fmt.Print("Digite o nome do contato que deseja editar: ")
+	fmt.Scan(&nomeBusca)
+
+	indiceEncontrado := -1
+	for i, contato := range contatos {
+		if contato.NomeContato == nomeBusca {
+			indiceEncontrado = i
+			break
+		}
+	}
+
+	if indiceEncontrado == -1 {
+		fmt.Println("Contato não encontrado!")
+		return
+	}
+	fmt.Println("Contato encontrado! Digite os novos dados:")
+
+	fmt.Print("Novo Nome: ")
+	fmt.Scan(&contatos[indiceEncontrado].NomeContact)
+
+	fmt.Print("Novo Telefone: ")
+	fmt.Scan(&contatos[indiceEncontrado].TelefoneContact)
+
+	fmt.Print("Novo Email: ")
+	fmt.Scan(&contatos[indiceEncontrado].EmailContact)
+
+	novosDadosJSON, err := json.MarshalIndent(contatos, "", "  ")
+	if err != nil {
+		fmt.Println("Erro ao gerar JSON:", err)
+		return
+	}
+	err = os.WriteFile("data/contacts.json", novosDadosJSON, 0o644)
+	if err != nil {
+		fmt.Println("Erro ao salvar o arquivo:", err)
+		return
+	}
+
+	fmt.Println("Contato editado com sucesso!")
 }
 
 func RemoverContatos() {
 }
 
 func Sair() {
+	fmt.Println("Saindo do sistema... Até logo!")
+	os.Exit(0)
 }
